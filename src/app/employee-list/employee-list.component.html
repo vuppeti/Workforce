@@ -1,1 +1,26 @@
-<p>employee-list works!</p>
+<div class="container w-50">
+    <h5 class="text-right mt-3" style="color: #7ed4e6;">
+        Total of
+        <span style="color: #F5B041;">{{empData['total']}}</span>
+        Employees
+    </h5>
+    <div class="card-columns mt-3 mb-2" >
+        <div class="card my-4" *ngFor="let empList of empData['data'] | paginate: { itemsPerPage: 6,currentPage: pageNo  , 
+            totalItems: empData['total']};let i=index" (click)="routeEmpInfo(empList['id'])">
+            <img class="card-img-top img-fluid" src="../../assets/user.png" alt="Card image">
+            <div class="card-body">
+              <p class="card-text bg-primary text-center">{{empList['first_name']}} {{empList['last_name']}}</p>        
+            </div>
+        </div>
+    </div>   
+    <pagination-controls  class="text-center"    
+                                      (pageChange)="pageNo = $event" 
+                                      (click)="updateEmpNo(pageNo)"
+                                      previousLabel=""
+                                      nextLabel=""
+                                      maxSize="6"
+                                      >
+    </pagination-controls> 
+</div>
+
+

@@ -1,0 +1,13 @@
+li.nav-item.active { background:red; }
+a{
+    color: #000000a8;
+}
+#main{
+    padding-left: 0;
+    padding-right: 0;
+}
+li.nav-item.active {
+    background:#0062cc;
+    color: #ffff;
+}
+.nav-link {padding: 0;}
